@@ -1,5 +1,5 @@
 [build]
-  publish = "shivasharanu portfolio/dist"
+  publish = "dist"
   # No build command required if the built files are already in the repo.
   command = ""
 
