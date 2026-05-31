@@ -1,0 +1,8 @@
+[build]
+  publish = "shivasharanu portfolio/dist"
+  # No build command required if the built files are already in the repo.
+  command = ""
+
+[context.production.environment]
+# Add environment variables here if needed (example)
+# NODE_ENV = "production"
