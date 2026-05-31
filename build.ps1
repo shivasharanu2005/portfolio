@@ -25,6 +25,13 @@ foreach ($f in $files) {
     Write-Output "Wrote: $out"
 }
 
+# Ensure there's an index.html for static hosts (copy main portfolio)
+$main = Join-Path $dist 'sk.portfolio.html'
+if (Test-Path $main) {
+    Copy-Item -Path $main -Destination (Join-Path $dist 'index.html') -Force
+    Write-Output "Wrote: $dist\index.html"
+}
+
 $zip = Join-Path $ScriptDir 'deploy.zip'
 if (Test-Path $zip) { Remove-Item $zip -Force }
 Compress-Archive -Path (Join-Path $dist '*') -DestinationPath $zip -Force
